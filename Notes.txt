@@ -1,0 +1,7 @@
+Notes
+
+* 
+* input('can put prompt here')
+* try: except: catches errors
+* 'in' keyword in case of string  
+* All the uppercase letters come before all the lowercase letters. -> conver to standard

@@ -17,11 +17,15 @@ def Variables():
 
 
 def UserInput():
-    # Input
-    userInput = input('What is the name of country you are in now?\n')
-    userInputStr = str(userInput).lower()
-    print('Right answer' if userInputStr == 'australia' or userInputStr ==
-          'aus' else (f'Lying your country is not {userInputStr}'))
+    while True:
+        # Input
+        userInput = input('What is the name of country you are in now?\n')
+        userInputStr = str(userInput).lower()
+        if(userInputStr == 'australia'):
+            break
+        print('Right answer' if userInputStr == 'australia' or userInputStr ==
+              'aus' else (f'Lying your country is not {userInputStr}'))
+    print("Correct!!")
 
 
 def printWords():
