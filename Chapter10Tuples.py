@@ -106,3 +106,20 @@ def composites():
 
 
 def exercise():
+    name = input("Enter file:")
+    if len(name) < 1:
+        name = "mbox-short.txt"
+    handle = open(name)
+    d = dict()
+    for line in handle:
+        if line.startswith('From '):
+            words = line.split()
+            if len(words) > 4:
+                word = words[5]
+                timeLst = word.split(':')
+                d[timeLst[0]] = d.get(timeLst[0], 0) + 1
+    t = list(d.items())
+    t.sort()
+
+    for hour, count in t:
+        print(hour, count)
