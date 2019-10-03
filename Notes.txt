@@ -5,3 +5,13 @@ Notes
 * try: except: catches errors
 * 'in' keyword in case of string  
 * All the uppercase letters come before all the lowercase letters. -> conver to standard
+* Strings are immutable
+* Lists are mutable
+* Don't forget that most list methods modify the argument and return None. 
+    This is the opposite of the string methods, which return a new string and leave the original alone.
+* To remove an element from a list, you can use pop, remove, del
+* To create a tuple with a single element, you have to include the final comma:
+
+* [] a list (mutable)
+* {} a dictionary
+* ()/ ,  a tuple (immutable)

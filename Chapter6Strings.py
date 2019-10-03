@@ -28,9 +28,9 @@ def astringFunc2():
 
 def astringFunc3():
     word = 'Banana'
-    print(word.find('z'))
+    print(word.find('z'))  # returns index
     print(word.find('an'))
-    print(word.find('an', 3))
+    print(word.find('an', 3))  # Find 'an' starting from index 3
     print(word.find('na', 3))
     print('find(b) ',  word.find('b'))
     print(word.startswith('b'))
@@ -42,9 +42,20 @@ def astringFunc3():
 
 def findPost():
     data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
-    print(data[
-        data.find('@'): data.find(' ', data[data.find('@')+1])
-    ])
+    atPosInx = data.find('@')
+    spacePosAfterAtInx = data.find(' ', atPosInx)
+    print(data[atPosInx + 1: spacePosAfterAtInx])
 
 
-findPost()
+def StringFormatSpecifier():
+    noOfKoalas = 52
+    aword = 'I have %d %s with avarage height of %g cm' % (
+        noOfKoalas, 'Koalas', 65.8)
+    print(aword)
+
+
+def ExtractFloat():
+    data = 'X-DSPAM-Confidence:0.8475'
+    colon_pos = data.find(':')
+    floatVal = float(data[colon_pos+1:])
+    print(floatVal)
