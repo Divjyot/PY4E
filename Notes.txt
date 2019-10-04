@@ -1,6 +1,5 @@
 Notes
 
-* 
 * input('can put prompt here')
 * try: except: catches errors
 * 'in' keyword in case of string  
@@ -15,3 +14,57 @@ Notes
 * [] a list (mutable)
 * {} a dictionary
 * ()/ ,  a tuple (immutable)
+
+
+* Regular Expression
+    From Wiki:
+         gray|grey 
+         gr(a|e)y
+         ? : zero or one occurance of preceding item ---> colou?r : color or colour
+         * : zero or more occurance of preceding item ---> colou*r : color or colour or colouur or colouuur ...
+         + : one or more occurance of preceding item ---> colou*r :  colour or colouur or colouuur ...
+         {n} : preceding item matched exactly n times -----> colo{2}r : matched on 'coloor' ONLY
+         {min,} : preceding item matched min n times -----> colo{2,}r : matched on 'coloor', colooor, coloooor ...
+         {min, max} : preceding item matched atleast min n times but not more than max times 
+           -----> colo{2,4}r :  matched on 'coloor', 'colooor', 'coloooor' ONLY
+         . : a.b : matches any string that contains an "a" then any other character (not plural) and then "b" 
+         .* : a.*b :   matches any string that contains an "a" and "b" at later point
+
+    From Python Doc:
+         ^ : Caret : used to matches the start of the string, and in MULTILINE mode also matches immediately after each newline.
+         \S : a non-whitespace character
+         ^ Matches the beginning of the line.
+    Summary:
+        $ Matches the end of the line.
+        . Matches any character (a wildcard).
+        \s Matches a whitespace character.
+        \S Matches a non-whitespace character (opposite of \s).
+        * Applies to the immediately preceding character(s) and indicates to match zero or more times.
+        *? Applies to the immediately preceding character(s) and indicates to match zero or more times in "non-greedy mode".
+        + Applies to the immediately preceding character(s) and indicates to match one or more times.
+        +? Applies to the immediately preceding character(s) and indicates to match one or more times in "non-greedy mode".
+        ? Applies to the immediately preceding character(s) and indicates to match zero or one time.
+        ?? Applies to the immediately preceding character(s) and indicates to match zero or one time in "non-greedy mode".
+        [aeiou] Matches a single character as long as that character is in the specified set. In this example, it would match "a", "e", "i", "o", or "u", but no other characters.
+        [a-z0-9] You can specify ranges of characters using the minus sign. This example is a single character that must be a lowercase letter or a digit.
+        [^A-Za-z] When the first character in the set notation is a caret, it inverts the logic. This example matches a single character that is anything other than an uppercase or lowercase letter.
+        ( ) When parentheses are added to a regular expression, they are ignored for the purpose of matching, but allow you to extract a particular subset of the matched string rather than the whole string when using findall().
+        \b Matches the empty string, but only at the start or end of a word.
+        \B Matches the empty string, but not at the start or end of a word.
+        \d Matches any decimal digit; equivalent to the set [0-9].
+        \D Matches any non-digit character; equivalent to the set [^0-9].
+
+        "http[s]?://.+?"
+
+          > http[s]?  means find either http or https, ie. http followed by zero or more 's'
+
+          > .+? means one or more characters in non-greedy fashion i.e. smallest possible matching string
+              and greedy is when mtach tries to find the largest possible matching string.
+
+* Networking
+  Socket : low level interface for making requests
+  b'Hello World' specify that the varibable should be stored as bytes object
+    encode() and b'' are same
+
+* Files
+   open('cover3.jpg', 'wb') 'wb' is for writing only
